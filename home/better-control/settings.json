@@ -1,0 +1,22 @@
+{
+    "visibility": {
+        "Autostart": false,
+        "USBGuard": false,
+        "Power": false
+    },
+    "positions": {},
+    "usbguard_hidden_devices": [],
+    "language": "en",
+    "vertical_tabs": false,
+    "vertical_tabs_icon_only": false,
+    "tab_order": [
+        "Wi-Fi",
+        "Bluetooth",
+        "Volume",
+        "Battery",
+        "Display",
+        "Power",
+        "Autostart",
+        "USBGuard"
+    ]
+}

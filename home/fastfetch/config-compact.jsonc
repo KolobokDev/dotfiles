@@ -1,0 +1,8 @@
+{
+  "logo": {
+    "type": "small"
+  },
+  "display": {
+    "separator": " : "
+  }
+}

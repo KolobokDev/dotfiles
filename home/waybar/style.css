@@ -1,0 +1,410 @@
+@define-color bg rgba(35, 35, 40, 0.88);
+@define-color bg-hover rgba(60, 60, 65, 0.95);
+
+@define-color text #eeeeee;
+@define-color muted #909090;
+
+@define-color workspace-active rgba(80, 80, 85, 0.75);
+@define-color workspace-active-text #eeeeee;
+
+/* =====================================================
+GLOBAL
+===================================================== */
+
+* {
+    border: none;
+
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: 800;
+
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+
+/* =====================================================
+MENU
+===================================================== */
+
+#custom-menu {
+    background: @bg;
+    color: @text;
+
+    border-radius: 20px;
+
+    padding: 0 12px;
+    margin: 4px 2px;
+}
+
+#custom-menu:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+WORKSPACES
+===================================================== */
+
+#workspaces {
+    background: transparent;
+
+    padding: 0;
+    margin: 4px 2px;
+}
+
+#workspaces button {
+    background: @bg;
+    color: @text;
+
+    border: none;
+    border-radius: 50%;
+
+    min-width: 28px;
+    min-height: 28px;
+
+    padding: 0;
+    margin: 0 3px;
+}
+
+#workspaces button:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+ACTIVE WORKSPACE
+===================================================== */
+#workspaces button.active {
+    background: @workspace-active;
+    color: @workspace-active-text;
+
+    border: none;
+    border-radius: 50%;
+
+    min-width: 28px;
+    min-height: 28px;
+
+    padding: 0;
+}
+
+#workspaces button.active:hover {
+    background: @workspace-active;
+    color: @workspace-active-text;
+}
+
+/* =====================================================
+URGENT WORKSPACE
+===================================================== */
+
+#workspaces button.urgent {
+    background: @bg;
+    color: #ff5555;
+
+    border: none;
+    border-radius: 50%;
+
+    min-width: 28px;
+    min-height: 28px;
+
+    padding: 0;
+}
+
+#workspaces button.urgent:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+CENTER
+===================================================== */
+
+#clock,
+#custom-clockweather,
+#custom-center,
+#group-center {
+    background: @bg;
+    color: @text;
+
+    border-radius: 20px;
+
+    padding: 0 14px;
+    margin: 4px 2px;
+}
+
+#clock:hover,
+#custom-clockweather:hover,
+#custom-center:hover,
+#group-center:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+#group-center * {
+    background: transparent;
+    border: none;
+}
+
+
+/* =====================================================
+VOLUME GROUP
+===================================================== */
+
+#group-volume {
+    background: @bg;
+    color: @text;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 0 5px;
+    margin: 4px 2px;
+}
+
+#group-volume:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+#group-volume .volume-drawer {
+    background: transparent;
+}
+
+
+/* =====================================================
+VOLUME
+===================================================== */
+
+#pulseaudio {
+    background: transparent;
+    color: @text;
+
+    border: none;
+
+    margin: 0;
+    padding: 0 7px;
+}
+
+#pulseaudio:hover {
+    color: @text;
+}
+
+
+/* =====================================================
+VOLUME SLIDER
+===================================================== */
+
+#pulseaudio-slider {
+    background: transparent;
+
+    border: none;
+
+    margin: 0 6px;
+}
+
+#pulseaudio-slider trough {
+    min-width: 65px;
+    min-height: 4px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-radius: 10px;
+}
+
+#pulseaudio-slider highlight {
+    background: rgba(190, 190, 190, 0.75);
+
+    border-radius: 10px;
+}
+
+#pulseaudio-slider slider {
+    min-width: 0;
+    min-height: 0;
+
+    background: #c0c0c0;
+
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+INTERNET
+===================================================== */
+
+#custom-connectivity {
+    background: @bg;
+    color: @text;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 0 10px;
+    margin: 4px 2px;
+}
+
+#custom-connectivity:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+BLUETOOTH
+===================================================== */
+
+#custom-bluetooth {
+    background: @bg;
+    color: @text;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 0 10px;
+    margin: 4px 2px;
+}
+
+#custom-bluetooth:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+NETWORK
+===================================================== */
+
+#network {
+    background: @bg;
+    color: @text;
+
+    border-radius: 20px;
+
+    padding: 0 10px;
+    margin: 4px 2px;
+}
+
+#network:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+#network.disconnected {
+    color: @muted;
+}
+
+#network.disconnected:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+CPU / MEMORY / DISK
+===================================================== */
+
+#cpu,
+#memory,
+#disk {
+    background: @bg;
+    color: @text;
+
+    border-radius: 20px;
+
+    padding: 0 10px;
+    margin: 4px 2px;
+}
+
+#cpu:hover,
+#memory:hover,
+#disk:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+BATTERY
+===================================================== */
+
+#battery {
+    background: @bg;
+    color: @text;
+
+    border-radius: 20px;
+
+    padding: 0 10px;
+    margin: 4px 2px;
+}
+
+#battery:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+#battery.charging {
+    color: #bdbdbd;
+}
+
+#battery.warning {
+    color: #a8a8a8;
+}
+
+#battery.critical {
+    color: #ff5555;
+}
+
+#battery.charging:hover,
+#battery.warning:hover,
+#battery.critical:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+POWER
+===================================================== */
+
+#custom-power {
+    background: @bg;
+    color: @text;
+
+    border-radius: 20px;
+
+    padding: 0 12px;
+    margin: 4px 2px;
+}
+
+#custom-power:hover {
+    background: @bg-hover;
+    color: @text;
+}
+
+
+/* =====================================================
+TOOLTIP
+===================================================== */
+
+tooltip {
+    background: rgba(30, 30, 35, 0.92);
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 7px;
+}
+
+tooltip label {
+    color: @text;
+
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11px;
+    font-weight: 800;
+}

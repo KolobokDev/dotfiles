@@ -1,0 +1,98 @@
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    /* Полностью убираем цвет фона, остаётся только размытие */
+    background-color: transparent;
+}
+
+grid, box {
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 1000px;
+
+    background-color: transparent;
+    color: transparent;
+
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 38px 38px, contain;
+
+    outline: none;
+}
+
+/* 1. Первая кнопка (Lock) отталкивается влево */
+button:nth-child(1) {
+    margin-right: 60px;
+}
+
+/* 2. Вторая кнопка (Suspend) встает слева от центровой */
+button:nth-child(2) {
+    margin-right: 60px;
+}
+
+/* 3. Третья кнопка (Shutdown / Питание) СТРОГО В ЦЕНТРЕ - 0px */
+button:nth-child(3) {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* 4. Четвертая кнопка (Reboot) отлетает вправо */
+button:nth-child(4) {
+    margin-left: 60px;
+}
+
+/* 5. Пятая кнопка (Logout) отлетает еще дальше вправо */
+button:nth-child(5) {
+    margin-left: 60px;
+}
+
+button:hover {
+    background-size: 44px 44px, contain;
+}
+
+button:focus,
+button:active {
+    outline: none;
+}
+
+/* LOCK */
+#lock {
+    background-image: url("assets/lock_black.png"), url("assets/grad_lock.png");
+}
+
+/* SUSPEND */
+#suspend {
+    background-image: url("assets/suspend_black.png"), url("assets/grad_suspend.png");
+}
+
+/* SHUTDOWN */
+#shutdown {
+    background-image: url("assets/shutdown_black.png"), url("assets/grad_shutdown.png");
+}
+
+/* REBOOT */
+#reboot {
+    background-image: url("assets/reboot_black.png"), url("assets/grad_reboot.png");
+}
+
+/* LOGOUT */
+#logout {
+    background-image: url("assets/logout_black.png"), url("assets/grad_logout.png");
+}
+
+/* HIBERNATE */
+#hibernate {
+    background-image: url("assets/hibernate_black.png"), url("assets/grad_hibernate.png");
+}

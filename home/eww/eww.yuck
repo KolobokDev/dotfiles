@@ -1,0 +1,56 @@
+(defpoll time :interval "1s"
+  "date '+%H:%M'")
+
+(defpoll active_workspace :interval "0.2s"
+  "hyprctl activeworkspace -j | jq -r '.id'")
+
+(defwidget workspace [number]
+  (eventbox
+    :onclick "hyprctl dispatch workspace ${number}"
+    
+    (label
+      :class {active_workspace == number ? "workspace active" : "workspace"}
+      :text number)))
+
+(defwidget workspaces []
+  (box
+    :class "workspaces"
+    :orientation "h"
+    :space-evenly false
+
+    (workspace :number "1")
+    (workspace :number "2")
+    (workspace :number "3")
+    (workspace :number "4")
+    (workspace :number "5")
+    (workspace :number "6")))
+
+(defwidget bar []
+  (centerbox
+    :class "bar"
+
+    (box
+      :class "left"
+      :space-evenly false
+      (workspaces))
+
+    (label
+      :class "clock"
+      :text time)
+
+    (label :text "")))
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry
+    :x "0%"
+    :y "5px"
+    :width "100%"
+    :height "50px"
+    :anchor "top center")
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  :windowtype "dock"
+
+  (bar))

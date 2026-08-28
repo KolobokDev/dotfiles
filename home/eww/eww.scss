@@ -1,0 +1,65 @@
+* {
+    all: unset;
+}
+
+.bar {
+    background: transparent;
+    min-height: 50px;
+}
+
+.left {
+    min-width: 0px;
+    min-height: 0px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.workspaces {
+    padding: 0px;
+    margin: 0px 0px 0px 15px;
+
+    spacing: 5px;
+}
+
+.workspace {
+    min-width: 44px;
+    max-width: 44px;
+
+    min-height: 44px;
+    max-height: 44px;
+
+    padding: 0px;
+    margin: 0px;
+
+    border-radius: 50%;
+
+    background-color: rgba(20, 20, 28, 0.80);
+
+    color: #8d8d96;
+
+    font-family: "DaddyTimeMono NF";
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.workspace.active {
+    background-color: rgba(55, 58, 68, 0.95);
+    color: #ffffff;
+}
+
+.workspace:hover {
+    background-color: rgba(65, 68, 78, 0.95);
+    color: #ffffff;
+}
+
+.clock {
+    color: #bfc9db;
+
+    font-family: "DaddyTimeMono NF";
+    font-size: 18px;
+    font-weight: bold;
+
+    padding: 0px;
+    margin: 0px;
+}

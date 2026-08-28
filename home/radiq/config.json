@@ -1,0 +1,24 @@
+{
+    "animationDurationMs": 130,
+    "blurAmount": 10,
+    "borderColor": "#232328",
+    "borderHighlightColor": "#B0B0B5",
+    "fontFamily": "Inter, Roboto, sans-serif",
+    "hotkeyDisplay": "SUPER + F",
+    "iconSize": 56,
+    "pinnedApps": [
+        "org.telegram.desktop.desktop",
+        "org.mozilla.firefox",
+        "org.kde.dolphin.desktop",
+        "burpsuite.desktop",
+        "discord.desktop",
+        "org.vinegarhq.Sober.desktop",
+        "obsidian.desktop",
+        ""
+    ],
+    "ringInnerRadius": 100,
+    "ringOuterRadius": 230,
+    "scrimColor": "#E0101015",
+    "wedgeColor": "#CC232328",
+    "wedgeHighlightColor": "#CC232328"
+}

@@ -1,0 +1,31 @@
+# Secrets
+.env
+.env.*
+*.secret
+*.key
+*.pem
+credentials*
+secrets/
+
+# Private keys
+.ssh/
+
+# Browser/private profiles
+config/chromium/
+config/mozilla/
+config/discord/
+config/obsidian/
+config/Code - OSS/
+
+# Cache
+**/.cache/
+**/cache/
+**/caches/
+
+# Runtime
+config/session/
+config/pulse/
+
+# Trash
+config/trash/
+config/trashrc
