@@ -1,0 +1,12 @@
+better-control-git
+burpsuite
+eww
+eww-debug
+gtk-engine-murrine
+gtk2
+seclists
+swaylock-effects
+ttf-victor-mono
+wlogout
+yay-bin
+yay-bin-debug
