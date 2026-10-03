@@ -67,23 +67,25 @@ label-padding = 1
 click-left = control -w
 
 [module/volume]
+
 type = internal/pulseaudio
 
+# Жестко ограничиваем максимальную громкость до 100%
+max-volume = 100
+use-ui-max = false
+
+# Шаг изменения громкости при прокрутке (в процентах)
+interval = 5
+
 format-volume = <label-volume>
-label-volume = 󰖀 %percentage%%
+label-volume = "%{A1:control -v:}%{A3:pactl set-sink-mute @DEFAULT_SINK@ toggle:}󰖀 %percentage%%%{A}%{A}"
 label-volume-foreground = ${colors.foreground}
 label-volume-padding = 1
 
 format-muted = <label-muted>
-label-muted = 󰕿
+label-muted = "%{A1:control -v:}%{A3:pactl set-sink-mute @DEFAULT_SINK@ toggle:}󰕿 0%%{A}%{A}"
 label-muted-foreground = #888888
 label-muted-padding = 1
-
-interval = 5
-
-# Правый клик переключает звук (mute / unmute)
-click-right = pactl set-sink-mute @DEFAULT_SINK@ toggle
-
 [module/bluetooth]
 type = custom/text
 
