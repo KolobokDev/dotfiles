@@ -1,0 +1,131 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,                  /* Возвращена прежняя высота */
+    "margin": "4px 6px 0 6px",
+
+    "modules-left": [
+        "custom/menu",
+        "custom/sep",
+        "niri/workspaces",
+        "custom/sep",
+        "custom/connectivity",
+        "custom/bluetooth"
+    ],
+
+    "modules-center": [
+        "custom/clockweather"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "custom/sep",
+        "memory",
+        "custom/sep",
+        "disk",
+        "custom/sep",
+        "battery",
+        "custom/sep",
+        "custom/power"
+    ],
+
+    "custom/sep": {
+        "format": "│",
+        "tooltip": false
+    },
+
+    "custom/menu": {
+        "format": "󰍜",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "custom/clockweather": {
+        "exec": "~/.config/waybar/scripts/clockweather.sh",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "~/.config/waybar/scripts/clockweather.sh toggle && pkill -RTMIN+8 waybar",
+        "signal": 8,
+        "tooltip": true,
+        "tooltip-format": "Клик — дата и погода"
+    },
+
+    "custom/connectivity": {
+        "format": "󰖩",
+        "tooltip": false,
+        "on-click": "control -w"
+    },
+
+    "custom/bluetooth": {
+        "format": "󰂯",
+        "tooltip": false,
+        "on-click": "control -b"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 {volume}%",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "none",
+        "tooltip": false
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": "󰍛 {percentage}%",
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}/{total:0.1f} GB ({percentage}%)"
+    },
+
+    "disk": {
+        "interval": 30,
+        "path": "/",
+        "format": "󰋊 {percentage_used}%",
+        "tooltip": true,
+        "tooltip-format": "{used}/{total} ({percentage_used}%)"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip": true,
+        "tooltip-format": "{capacity}%",
+        "on-click": "control -B"
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout -b 5"
+    }
+}
