@@ -1,0 +1,159 @@
+/* =====================================================
+ПАЛИТРА ЦВЕТОВ
+===================================================== */
+@define-color bg rgba(24, 25, 38, 0.85);        
+@define-color border-color rgba(255, 255, 255, 0.12); 
+@define-color text #cad3f5;                     
+@define-color hover-bg rgba(255, 255, 255, 0.1);
+
+/* =====================================================
+GLOBAL (УВЕЛИЧЕННЫЙ КРУПНЫЙ ШРИФТ)
+===================================================== */
+* {
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: bold;
+
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+/* =====================================================
+3 ПЛАВАЮЩИХ ОСТРОВА (ISLANDS)
+===================================================== */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @bg;
+    border: 1px solid @border-color;
+    border-radius: 10px;
+    padding: 2px 8px;
+}
+
+.modules-left {
+    margin-right: 8px;
+}
+
+.modules-center {
+    margin: 0 8px;
+}
+
+.modules-right {
+    margin-left: 8px;
+}
+
+/* =====================================================
+ТОНКИЙ РАЗДЕЛИТЕЛЬ
+===================================================== */
+#custom-sep {
+    color: rgba(255, 255, 255, 0.25);
+    padding: 0 6px;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+/* =====================================================
+ВНУТРЕННИЕ ЭЛЕМЕНТЫ
+===================================================== */
+#custom-menu,
+#workspaces,
+#niri-workspaces,
+#custom-connectivity,
+#custom-bluetooth,
+#custom-clockweather,
+#pulseaudio,
+#memory,
+#disk,
+#battery,
+#custom-power {
+    background: transparent;
+    color: @text;
+    padding: 0px 5px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#custom-menu label,
+#custom-connectivity label,
+#custom-clockweather label,
+#pulseaudio label,
+#memory label,
+#disk label,
+#custom-power label {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+/* =====================================================
+ТОЧЕЧНАЯ КОРРЕКТИРОВКА ДЛЯ БЛЮТУЗ И БАТАРЕИ
+===================================================== */
+#custom-bluetooth,
+#custom-bluetooth label {
+    font-size: 9.5px;
+    padding-bottom: 1px;
+}
+
+#battery,
+#battery label {
+    font-size: 11px;                /* Увеличен на 1px */
+    padding-bottom: 1px;
+}
+
+/* Эффект наведения */
+#custom-menu:hover,
+#custom-power:hover,
+#custom-connectivity:hover,
+#custom-bluetooth:hover {
+    background: @hover-bg;
+    border-radius: 5px;
+}
+
+/* =====================================================
+WORKSPACES (ВКЛЮЧАЯ NIRI)
+===================================================== */
+#workspaces button,
+#niri-workspaces button {
+    background: transparent;
+    color: @text;
+    border-radius: 5px;
+    min-width: 16px;
+    padding: 0 5px;
+    margin: 0 1px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#workspaces button.active,
+#niri-workspaces button.active,
+#niri-workspaces button.focused {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* =====================================================
+TOOLTIP
+===================================================== */
+tooltip {
+    background: rgba(30, 30, 46, 0.95);
+    border: 1px solid @border-color;
+    border-radius: 8px;
+    padding: 4px 6px;
+}
+
+tooltip label {
+    color: @text;
+    font-size: 11px;
+    font-weight: normal;
+}
